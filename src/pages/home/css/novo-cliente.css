@@ -1,0 +1,63 @@
+.modal.novo-cliente {
+    background-color: rgba(0, 0, 0, 0.144);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .content {
+        background-color: white;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.327);
+        padding: 10px;
+        border-radius: 5px;
+        width: 100%;
+        max-width: 500px;
+        margin-inline: 10px;
+
+        h3 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: solid 2px black;
+            margin-bottom: 10px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+
+            .inputs {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                margin-bottom: 20px;
+
+                div{
+                    display: flex;
+                    flex-direction: column;
+
+                    label {
+                        font-size: .8rem;
+                    }
+
+                    input {
+                        border-bottom: solid 2px rgba(0, 0, 0, 0.264);
+                        border-radius: 0px;
+                        padding: 5px;
+                    }
+                }
+            }
+
+            nav {
+                display: flex;
+                justify-content: flex-end;
+                gap: 10px;
+
+                button {
+                    width: fit-content;
+                    padding: 10px;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}

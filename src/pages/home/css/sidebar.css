@@ -1,0 +1,94 @@
+.page.home .sidebar {
+    display: flex;
+    opacity: 1;
+
+    .open- {
+        font-size: 1.2rem;
+        padding: 7px 8.3px;
+        border-radius: 50%;
+        background-color: blue;
+        color: white;
+        box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.215);
+        margin: 10px;
+        pointer-events: all;
+        transition: .2s;
+
+        &.fa-xmark {
+            background-color: red;
+            padding: 7px 9px;
+            margin-left: -42px;
+            z-index: 1;
+        }
+    }
+
+    &[open] {
+        background-color: rgba(0, 2, 94, 0.27);
+        pointer-events: all;
+        .content {
+            animation: var(--show-right);
+            opacity: 1;
+            pointer-events: all;
+            max-width: 250px;
+            padding: 10px;
+        }
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: white;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.215);
+        pointer-events: none;
+        opacity: 0;
+
+        width: 100%;
+        max-width: 0px;
+        height: 100%;
+        gap: 10px;
+        padding: 0px;
+        transition: .3s;
+        transition-property: max-width;
+
+        button {
+            font-weight: 500;
+        }
+
+        h2 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            width: 100%;
+            margin-bottom: 15px;
+
+            a {
+                width: 80%;
+            }
+        }
+
+        nav {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            button {
+                background-color: transparent;
+                padding: 8px 5px;
+                border-radius: 0px;
+                border-bottom: solid 2px rgba(0, 0, 0, 0.226);
+            }
+        }
+
+        .log-div {
+            display: flex;
+            flex-direction: column;
+           
+            button {
+                padding: 8px 10px;
+                background-color: red;
+                color: white;
+            }
+        }
+    }
+}

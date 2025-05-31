@@ -1,0 +1,142 @@
+.page.home main section.produtos {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+
+    .novo-produto-btn {
+        width: fit-content;
+        align-self: flex-end;
+        margin-bottom: 10px;
+        padding: 10px;
+        background-color: blue;
+        color: white;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.163);
+        --color: blue;
+        --back: white;
+    }
+
+    .search-div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: white;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.179);
+        border-radius: 3px;
+        gap: 30px;
+        padding: 10px;
+
+        form {
+            width: 100%;
+            gap: 10px;
+
+            .inputs {
+                display: flex;
+                justify-content: flex-end;
+                width: 100%;
+
+                div {
+                    display: flex;
+                    flex-direction: column;
+                    position: relative;
+                    gap: 5px;
+                    width: 100%;
+                    max-width: 300px;
+
+                    label {
+                        font-size: .7rem;
+                    }
+
+                    input {
+                        width: 100%;
+                        font-size: .9rem;
+                        padding: 5px;
+                        background-color: white;
+                        border-bottom: solid 2px black;
+                        border-radius: 0px;
+
+                        &:focus {
+                            background-color: aliceblue;
+                        }
+                    }
+
+                    button {
+                        position: absolute;
+                        bottom: 8px;
+                        right: 5px;
+                        width: fit-content;
+                        background-color: transparent;
+                        font-size: .9rem;
+                    }
+
+                    .list {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        margin-top: 10px;
+                        padding: 5px;
+                        gap: 10px;
+                        position: absolute;
+                        background-color: white;
+                        top: calc(100% + 5px);
+
+                        opacity: 0;
+                        pointer-events: none;
+
+                        &[view] {
+                            opacity: 1;
+                            pointer-events: all;
+                            animation: var(--show-top);
+                        }
+
+                        .item {
+                            display: flex;
+                            position: initial;
+                            width: 100%;
+                            max-width: 500px;
+                            padding: 5px;
+                            font-size: .8rem;
+                            background-color: rgba(0, 59, 221, 0.894);
+                            font-weight: 500;
+                            color: white;
+                            --color: red;
+
+                            &[hidden] {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .produto-div {
+        display: flex;
+        flex-direction: column;
+
+        background-color: white;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.179);
+        border-radius: 3px;
+        padding: 10px;
+        margin-top: 10px;
+
+
+        .options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+
+            button {
+                font-size: .8rem;
+                font-weight: 500;
+                padding: 10px;
+
+                &:last-child {
+                    background-color: red;
+                    color: white;
+                }
+            }
+        }
+    }
+}
