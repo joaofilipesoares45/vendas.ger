@@ -1,25 +1,40 @@
+import { faBars, faBoxArchive, faChevronRight, faClipboardList, faTruckField, faUser, faUsers } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Logo from "../../components/Logo";
-import Sidebar from "./components/Sidebar";
-import "./css/index.css"
-import { faUser } from "@fortawesome/free-solid-svg-icons";
-import Clientes from "./components/Clientes";
-import Produtos from "./components/Produtos";
 import { useState } from "react";
-import OverView from "./components/OverView";
+import Logo from "../../components/Logo";
+import Sidebar from "../../components/Sidebar";
+import Produtos from "./components/Produtos";
+import "./css/index.css";
+import "./css/sidebar.css";
+import Clientes from "./components/Clientes";
 
-export default function Home () {
+export default function Home() {
 
-    const [component, setComponent] = useState(<Produtos/>)
+    const [component, setComponent] = useState(<Produtos />)
 
     return (
         <div className="page home">
-            <Sidebar set={setComponent}/>
             <main>
                 <header>
-                    <Logo/>
+                    <Sidebar icon={faBars} side={"left"} cl="home-sidebar" title={<Logo />}>
+                        <nav>
+                            
+                            <button onClick={() => setComponent(<Clientes />)}>Clientes <FontAwesomeIcon icon={faUsers} /></button>
+                            <button onClick={() => setComponent(<Clientes />)}>Fornecedores <FontAwesomeIcon icon={faTruckField} /></button>
+                            <button onClick={() => setComponent(<Produtos />)}>Produtos <FontAwesomeIcon icon={faBoxArchive} /></button>
+                            <button>Pedidos <FontAwesomeIcon icon={faClipboardList} /></button>
+                        </nav>
+                        <div className="log-div">
+                            <button>Sair <FontAwesomeIcon icon={faChevronRight} /></button>
+                        </div>
+                    </Sidebar>
+                    <Logo />
                     <div className="opt-div">
-                        <FontAwesomeIcon icon={faUser}/>
+                        <Sidebar icon={faUser} cl="login-modal" >
+                            <div>
+                                login
+                            </div>
+                        </Sidebar>
                     </div>
                 </header>
                 {component}
